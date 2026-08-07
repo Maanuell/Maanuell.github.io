@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emmanuel Maduabum — Electrical Engineer</title>
+<meta name="description" content="Electrical engineer. Energy systems, autonomous robotics, data analysis. Hangzhou, China.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e14; --bg-2:#0f141c; --panel:#131a24; --panel-2:#182130;
+  --line:#1f2a3a; --line-2:#33445c;
+  --txt:#e6edf5; --txt-2:#9fb0c4; --txt-3:#697c92;
+  --acc:#4ade80;
+  --acc-2:#38bdf8;
+  --acc-3:#fbbf24;
+  --sans:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--txt); font-family:var(--sans);
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(74,222,128,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,222,128,.028) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 40%,transparent 100%);
+}
+body::after{
+  content:''; position:fixed; top:-30vh; left:50%; transform:translateX(-50%);
+  width:120vw; height:70vh; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(56,189,248,.10),transparent 65%);
+  filter:blur(30px);
+}
+.wrap{position:relative; z-index:1; max-width:1000px; margin:0 auto; padding:0 28px}
+a{color:var(--acc-2); text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:var(--mono)}
+
+nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  background:rgba(10,14,20,.72); border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex; align-items:center; justify-content:space-between; height:60px}
+.brand{font-weight:700; font-size:.95rem; letter-spacing:-.01em}
+.brand span{color:var(--acc)}
+.navlinks{display:flex; gap:26px; font-size:.85rem; font-family:var(--mono)}
+.navlinks a{color:var(--txt-3); transition:color .18s}
+.navlinks a:hover{color:var(--acc); text-decoration:none}
+@media(max-width:640px){.navlinks{display:none}}
+
+header{padding:92px 0 76px}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:9px; margin-bottom:26px;
+  padding:6px 13px; border:1px solid var(--line); border-radius:999px;
+  background:var(--panel); font-family:var(--mono); font-size:.74rem;
+  color:var(--txt-2); letter-spacing:.04em;
+}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--acc);flex:none;
+  box-shadow:0 0 0 0 rgba(74,222,128,.7); animation:pulse 2.4s infinite}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(74,222,128,.55)}
+  70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}
+  100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}
+}
+h1{
+  font-size:clamp(2.5rem,7vw,4.15rem); line-height:1.02; font-weight:700;
+  letter-spacing:-.035em; margin-bottom:20px;
+}
+h1 .grad{
+  background:linear-gradient(100deg,var(--acc) 0%,var(--acc-2) 55%,#a78bfa 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.tagline{font-size:1.14rem; color:var(--txt-2); max-width:62ch; margin-bottom:16px}
+.tagline strong{color:var(--txt); font-weight:600}
+.meta-row{
+  display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:30px;
+  font-family:var(--mono); font-size:.82rem; color:var(--txt-3);
+}
+.meta-row b{color:var(--txt-2); font-weight:500}
+.cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:11px 20px; border-radius:9px; font-size:.9rem; font-weight:600;
+  border:1px solid var(--line); background:var(--panel); color:var(--txt);
+  transition:transform .16s, border-color .16s, background .16s;
+}
+.btn:hover{transform:translateY(-2px); border-color:var(--acc); text-decoration:none}
+.btn-solid{background:var(--acc); border-color:var(--acc); color:#08130c}
+.btn-solid:hover{background:#6ee79a; border-color:#6ee79a; color:#08130c}
+
+section{padding:74px 0; border-top:1px solid var(--line)}
+.sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:12px}
+.sec-num{font-family:var(--mono); font-size:.8rem; color:var(--acc)}
+h2{font-size:1.72rem; font-weight:700; letter-spacing:-.02em}
+.sec-sub{color:var(--txt-2); max-width:66ch; margin-bottom:40px}
+
+.grid{display:grid; gap:20px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.card{
+  position:relative; padding:28px; border:1px solid var(--line); border-radius:14px;
+  background:linear-gradient(160deg,var(--panel) 0%,var(--bg-2) 100%);
+  overflow:hidden; transition:transform .2s, border-color .2s;
+}
+.card::before{
+  content:''; position:absolute; inset:0 0 auto 0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--acc),transparent);
+  opacity:0; transition:opacity .25s;
+}
+.card:hover{transform:translateY(-4px); border-color:#2f4055}
+.card:hover::before{opacity:.8}
+.card.feature{grid-column:1/-1;
+  background:linear-gradient(150deg,var(--panel-2) 0%,var(--bg-2) 65%)}
+.card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:6px}
+.card h3{font-size:1.24rem; font-weight:600; letter-spacing:-.015em}
+.card.feature h3{font-size:1.55rem}
+.badge{
+  flex:none; padding:4px 11px; border-radius:999px; font-family:var(--mono);
+  font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap;
+}
+.badge.live{background:rgba(74,222,128,.12); color:var(--acc); border:1px solid rgba(74,222,128,.28)}
+.badge.wip{background:rgba(251,191,36,.12); color:var(--acc-3); border:1px solid rgba(251,191,36,.28)}
+.badge.done{background:rgba(56,189,248,.11); color:var(--acc-2); border:1px solid rgba(56,189,248,.26)}
+.stack{font-family:var(--mono); font-size:.78rem; color:var(--txt-3); margin-bottom:16px}
+.card p{color:var(--txt-2); font-size:.95rem; margin-bottom:12px}
+.card ul{list-style:none; margin:14px 0 0}
+.card li{
+  position:relative; padding-left:20px; margin-bottom:9px;
+  color:var(--txt-2); font-size:.93rem;
+}
+.card li::before{
+  content:'▸'; position:absolute; left:0; top:0; color:var(--acc); font-size:.8rem;
+}
+.card li b{color:var(--txt); font-weight:600}
+
+.shot{margin-top:22px; border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  background:var(--bg-2)}
+.shot img{display:block; width:100%; height:auto}
+.shot figcaption{padding:10px 14px; font-family:var(--mono); font-size:.72rem; color:var(--txt-3);
+  border-top:1px solid var(--line)}
+
+.specs{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px;
+  margin-top:22px; background:var(--line); border:1px solid var(--line); border-radius:10px;
+  overflow:hidden;
+}
+.spec{background:var(--bg-2); padding:14px 16px}
+.spec dt{font-family:var(--mono); font-size:.68rem; color:var(--txt-3);
+  text-transform:uppercase; letter-spacing:.07em; margin-bottom:4px}
+.spec dd{font-size:.9rem; color:var(--txt); font-weight:500}
+
+.skillgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:18px}
+.skillbox{padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--panel)}
+.skillbox h4{font-family:var(--mono); font-size:.74rem; color:var(--acc);
+  text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px}
+.skillbox p{color:var(--txt-2); font-size:.9rem}
+
+.tl{position:relative; padding-left:30px}
+.tl::before{content:''; position:absolute; left:6px; top:8px; bottom:8px; width:1px;
+  background:linear-gradient(180deg,var(--acc),var(--line) 70%,transparent)}
+.tl-item{position:relative; padding-bottom:30px}
+.tl-item::before{
+  content:''; position:absolute; left:-28px; top:8px; width:9px; height:9px;
+  border-radius:50%; background:var(--bg); border:2px solid var(--acc);
+}
+.tl-item:not(:first-child)::before{border-color:var(--line-2)}
+.tl-role{font-size:1.04rem; font-weight:600}
+.tl-meta{font-family:var(--mono); font-size:.78rem; color:var(--txt-3); margin:3px 0 8px}
+.tl-item p{color:var(--txt-2); font-size:.93rem}
+
+footer{padding:64px 0 80px; border-top:1px solid var(--line)}
+footer h2{margin-bottom:14px}
+footer p{color:var(--txt-2); max-width:56ch; margin-bottom:26px}
+.foot-links{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px}
+.colophon{font-family:var(--mono); font-size:.76rem; color:var(--txt-3)}
+
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1; transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  .pulse{animation:none}
+  html{scroll-behavior:auto}
+}
+@media(max-width:640px){
+  header{padding:56px 0 48px}
+  section{padding:52px 0}
+  .card{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">EM<span>.</span></div>
+    <div class="navlinks">
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span class="pulse"></span> Open to remote &amp; part-time work</div>
+    <h1>Electrical engineer<br>building <span class="grad">energy systems<br>and machines</span> that run themselves.</h1>
+    <p class="tagline">
+      I design and audit energy systems, build the financial models decisions get made on, and I build
+      robots in my spare time. Currently completing an <strong>MEng in Intelligent Manufacturing &amp;
+      Control Engineering</strong> in Hangzhou while running operations for a Nigerian trading business.
+    </p>
+    <div class="meta-row">
+      <span><b>Location</b> Hangzhou, China · UTC+8</span>
+      <span><b>Base</b> Electrical &amp; Electronic Engineering</span>
+      <span><b>Graduating</b> January 2028</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-solid" href="Maduabum_Emmanuel_CV_V6.pdf">Download CV</a>
+      <a class="btn" href="mailto:emmanuelmaduabum@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/Maanuell">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/emmanuel-maduabum-35101621b/">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Work</h2></div>
+    <p class="sec-sub">
+      Hardware I have built, models I have run, and the research I am doing now. Energy and autonomy,
+      mostly — they turn out to be the same problem seen from two directions.
+    </p>
+
+    <div class="grid grid-2">
+
+      <article class="card feature reveal">
+        <div class="card-top">
+          <h3>Autonomous Lawn Mower Robot</h3>
+          <span class="badge wip">Autonomy in progress</span>
+        </div>
+        <p class="stack">Self-built platform · ROS · RTAB-Map SLAM · reinforcement learning · embedded control</p>
+        <p>
+          A working outdoor robot I designed, built and wired myself — chassis, drive system, power and
+          control electronics. The hardware runs. The interesting problem is what comes next: getting it to
+          navigate an outdoor space reliably enough to leave alone.
+        </p>
+        <ul>
+          <li><b>Built:</b> mechanical platform, drive and power electronics, control wiring — maintained as a live prototype.</li>
+          <li><b>In development:</b> navigation stack on ROS with RTAB-Map for mapping and localisation.</li>
+          <li><b>Exploring:</b> reinforcement learning for coverage path planning — mowing every square metre once, efficiently.</li>
+          <li><b>The real lesson:</b> outdoor failure modes have almost nothing to do with the algorithm — uneven terrain, glare, and how completely a space changes between seasons.</li>
+        </ul>
+
+        <figure class="shot">
+          <img src="images/mower-01.jpg" alt="The autonomous lawn mower platform" loading="lazy">
+          <figcaption>Drop a photo at images/mower-01.jpg and this panel fills itself.</figcaption>
+        </figure>
+
+        <dl class="specs">
+          <div class="spec"><dt>Domain</dt><dd>Outdoor autonomy</dd></div>
+          <div class="spec"><dt>Mapping</dt><dd>RTAB-Map SLAM</dd></div>
+          <div class="spec"><dt>Planning</dt><dd>RL, coverage paths</dd></div>
+          <div class="spec"><dt>Built by</dt><dd>Me, from scratch</dd></div>
+        </dl>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Green Hydrogen &amp; Fuel Cell Study</h3>
+          <span class="badge wip">Study stage</span>
+        </div>
+        <p class="stack">Technical &amp; economic feasibility · system sizing</p>
+        <p>
+          Surplus renewable power is worth very little at the moment it is generated and a great deal six
+          hours later. This study looks at whether an electrolyser and fuel cell can bridge that gap.
+        </p>
+        <ul>
+          <li>Coupling an electrolyser and fuel cell to surplus renewable and waste-to-energy generation to store and firm intermittent supply.</li>
+          <li>Technology selection and indicative sizing against available surplus power and water.</li>
+          <li>The conditions under which a demonstration unit stops being a science project and starts making economic sense.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Solar Irradiance Forecasting</h3>
+          <span class="badge done">Completed</span>
+        </div>
+        <p class="stack">MATLAB · LSTM · ConvLSTM · time-series modelling</p>
+        <p>
+          Recurrent and convolutional-recurrent models for short-horizon solar irradiance prediction,
+          compared on forecast accuracy. The work that pulled me into my current research area.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Cloud Classification with CNNs</h3>
+          <span class="badge done">Completed</span>
+        </div>
+        <p class="stack">MATLAB · convolutional neural networks · image processing</p>
+        <p>
+          A CNN trained to classify sky-image cloud types. The perception half of a solar nowcasting
+          system, and the companion to the forecasting work — you cannot predict what the sun will do
+          without first reading the sky.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Sales Performance Dashboard</h3>
+          <span class="badge done">Completed</span>
+        </div>
+        <p class="stack">Microsoft Power BI · data modelling · DAX measures</p>
+        <p>
+          An interactive sales dashboard built from a raw transactional dataset — cleaning and shaping the
+          data, defining calculated measures, and designing the visuals for people who will never open the
+          underlying table.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Speed-Bump Energy Generator</h3>
+          <span class="badge done">Completed</span>
+        </div>
+        <p class="stack">Mechanical design · energy conversion · system modelling</p>
+        <p>
+          A road-mounted harvester that converts the motion of passing vehicles into electricity for street
+          lighting. Covered the conversion mechanism and the system-level modelling of what a road's traffic
+          volume is actually worth in watts.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3>Probabilistic Solar Forecasting</h3>
+          <span class="badge wip">MEng research</span>
+        </div>
+        <p class="stack">Python · PyTorch · multi-modal deep learning</p>
+        <p>
+          My master's research. A forecasting system that estimates its own prediction error and reports a
+          confidence score alongside each forecast — so an operator knows not just the number, but whether
+          to act on it. Data pipeline built and validated; the model is under construction.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Toolkit</h2></div>
+    <p class="sec-sub">What I actually use, rather than everything I have ever opened.</p>
+    <div class="skillgrid">
+      <div class="skillbox reveal"><h4>Programming</h4><p>Python (NumPy, Pandas, PyTorch), MATLAB</p></div>
+      <div class="skillbox reveal"><h4>Data &amp; BI</h4><p>Power BI, Excel financial modelling, sensitivity analysis, technical reporting</p></div>
+      <div class="skillbox reveal"><h4>Energy</h4><p>PVsyst, energy auditing, PV system design, feasibility studies</p></div>
+      <div class="skillbox reveal"><h4>Robotics</h4><p>ROS, RTAB-Map SLAM, embedded control, reinforcement learning</p></div>
+      <div class="skillbox reveal"><h4>Design</h4><p>AutoCAD 2D/3D, Proteus, system modelling</p></div>
+      <div class="skillbox reveal"><h4>Certified</h4><p>Data Analytics &amp; BI (Dataleum, 2024) · Renewable Energy Project Development (GIZ, 2023)</p></div>
+      <div class="skillbox reveal"><h4>Languages</h4><p>English (fluent, CEFR B2) · Igbo (native) · Mandarin (HSK 2)</p></div>
+      <div class="skillbox reveal"><h4>Availability</h4><p>Remote, 10–15 hrs/week · UTC+8, overlaps Europe &amp; Africa</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Experience</h2></div>
+    <p class="sec-sub">Four years across engineering and operations in Ghana, Nigeria and China.</p>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-role">Business Operations Manager</div>
+        <div class="tl-meta">Cotto Enterprise · Abia State, Nigeria · Oct 2023 – present</div>
+        <p>End-to-end sales, logistics and financial operations for a petroleum-lubricants trading business
+        with ₦200m+ annual turnover. Multi-region distribution, budgeting, financial administration and
+        regulatory-compliance documentation.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-role">Project Engineer</div>
+        <div class="tl-meta">Mcjones Energy · Accra, Ghana · Mar – Dec 2023</div>
+        <p>Client energy audits, PV system design in PVsyst, equipment specifications and feasibility
+        studies. Built financial models with sensitivity analysis and income projections that informed
+        procurement decisions.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-role">Junior Research Analyst</div>
+        <div class="tl-meta">HerrnHut Corp · Tema, Ghana · Sep 2022 – Feb 2023</div>
+        <p>Market and technical research. Contributed to successive versions of a consolidated project
+        financial model for a multi-site eco-centre development, including pre-tax and after-tax variants,
+        and produced the site-by-site power requirement analysis used to size its energy provision.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-role">Electrical Engineering Intern</div>
+        <div class="tl-meta">GFEEL Engineering · Tema, Ghana · Sep 2021 – Feb 2022</div>
+        <p>Design, installation and maintenance of electrical systems — wiring, CCTV, solar and electrical
+        fencing — with technical drawings, cost estimates and field inspections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <p>
+      I'm open to remote and part-time work in energy analysis, data, and automation — and always happy to
+      talk to people building things that move.
+    </p>
+    <div class="foot-links">
+      <a class="btn btn-solid" href="mailto:emmanuelmaduabum@gmail.com">emmanuelmaduabum@gmail.com</a>
+      <a class="btn" href="Maduabum_Emmanuel_CV_V6.pdf">CV (PDF)</a>
+      <a class="btn" href="https://github.com/Maanuell">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/emmanuel-maduabum-35101621b/">LinkedIn</a>
+    </div>
+    <p class="colophon">
+      Emmanuel Maduabum · Hangzhou, Zhejiang, China · +86 189 6806 4285<br>
+      Built by hand. No frameworks, no trackers.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(el);
+  });
+
+  document.querySelectorAll('.shot img').forEach((img) => {
+    img.addEventListener('error', () => { img.closest('.shot').style.display = 'none'; });
+  });
+</script>
+
+</body>
+</html>
