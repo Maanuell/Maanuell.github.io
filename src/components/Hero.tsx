@@ -3,6 +3,9 @@ import gsap from "gsap";
 import HeroBackdrop from "./HeroBackdrop";
 import { profile } from "../data/content";
 
+/** "An Engineer" but "A Data Analyst" — so new roles can be added without breaking the line. */
+const article = (word: string) => (/^[aeiou]/i.test(word) ? "An" : "A");
+
 export default function Hero() {
   const scope = useRef<HTMLDivElement>(null);
   const [role, setRole] = useState(0);
@@ -43,7 +46,7 @@ export default function Hero() {
         </h1>
 
         <p className="blur-in mb-6 text-lg text-muted md:text-xl">
-          A{" "}
+          {article(profile.roles[role])}{" "}
           <span key={role} className="inline-block animate-role-fade-in font-display italic text-text-primary">
             {profile.roles[role]}
           </span>{" "}

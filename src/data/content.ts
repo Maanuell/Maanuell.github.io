@@ -18,7 +18,7 @@ export const profile = {
   initials: "EM",
   city: "Hangzhou",
   eyebrow: "PORTFOLIO '26",
-  roles: ["Engineer", "Modeller", "Builder", "Analyst"],
+  roles: ["Engineer", "Modeller", "Builder", "Data Analyst"],
   description:
     "Electrical engineer working across energy systems, financial modelling and machines that run themselves.",
   email: "emmanuelmaduabum@gmail.com",
@@ -140,7 +140,7 @@ export const experience = [
     role: "Project Engineer",
     org: "Mcjones Energy",
     place: "Accra, Ghana",
-    period: "Mar — Dec 2023",
+    period: "Mar 2023 — Dec 2023",
     blurb:
       "Took renewable energy projects from first site visit to signed-off business case — the audit, the system design in PVsyst, and the financial model that decided whether the project went ahead.",
   },
