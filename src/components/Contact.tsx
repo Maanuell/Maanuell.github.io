@@ -1,19 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import HeroBackdrop from "./HeroBackdrop";
+import Lightbox from "./Lightbox";
 import { profile, socials } from "../data/content";
 
 export default function Contact() {
   const marquee = useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = useState<string | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(".marquee-track", {
-        xPercent: -50,
-        duration: 40,
-        ease: "none",
-        repeat: -1,
-      });
+      gsap.to(".marquee-track", { xPercent: -50, duration: 40, ease: "none", repeat: -1 });
     }, marquee);
     return () => ctx.revert();
   }, []);
@@ -22,10 +18,23 @@ export default function Contact() {
 
   return (
     <footer id="contact" className="relative overflow-hidden bg-bg pb-8 pt-16 md:pb-12 md:pt-20">
-      <div className="absolute inset-0 scale-y-[-1] opacity-70">
-        <HeroBackdrop />
+      {/* ambient circuit loop, heavily damped so it never competes with the text */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <video
+          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-[0.18]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="circuit.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-bg/60" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bg to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent" />
       </div>
-      <div className="absolute inset-0 bg-black/60" />
 
       <div ref={marquee} className="relative z-10 mb-16 overflow-hidden border-y border-stroke py-6">
         <div className="marquee-track flex whitespace-nowrap">
@@ -77,7 +86,35 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-6 border-t border-stroke pt-8 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-8 border-t border-stroke pt-8 md:flex-row md:items-center md:justify-between">
+          {/* identity block — portrait sits with the name and numbers */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setZoom("portrait.jpg")}
+              className="group relative shrink-0 rounded-full"
+              aria-label="Enlarge portrait"
+            >
+              <span className="accent-gradient-animated absolute rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ inset: -2 }} />
+              <img
+                src="avatar.jpg"
+                alt={profile.name}
+                width={480}
+                height={480}
+                loading="lazy"
+                className="relative block h-14 w-14 rounded-full border border-stroke object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </button>
+
+            <div className="text-left">
+              <p className="text-sm text-text-primary">{profile.name}</p>
+              <p className="font-mono text-[11px] leading-relaxed text-muted">
+                {profile.city}, China
+                <br />
+                {profile.phones.join(" · ")}
+              </p>
+            </div>
+          </div>
+
           <div className="flex gap-6">
             {socials.map((s) => (
               <a key={s.label} href={s.href} className="text-sm text-muted transition-colors hover:text-text-primary">
@@ -93,14 +130,10 @@ export default function Contact() {
             </span>
             <span className="text-sm text-muted">Available for projects</span>
           </div>
-
-          <p className="text-center font-mono text-[11px] text-muted/70 md:text-right">
-            {profile.name} · {profile.city}, China
-            <br />
-            {profile.phones.join(" · ")}
-          </p>
         </div>
       </div>
+
+      <Lightbox src={zoom} alt={profile.name} onClose={() => setZoom(null)} />
     </footer>
   );
 }

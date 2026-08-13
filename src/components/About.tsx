@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { profile } from "../data/content";
 
 export default function About() {
   return (
@@ -13,36 +12,26 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="md:col-span-5"
           >
-            <div className="relative mx-auto max-w-[380px] md:mx-0">
+            <div className="relative mx-auto max-w-[360px] md:mx-0">
               <div
-                className="absolute -inset-6 opacity-50"
+                className="absolute -inset-8 opacity-45"
                 style={{
-                  background: "radial-gradient(circle at 50% 40%, rgba(78,133,191,0.28), transparent 68%)",
-                  filter: "blur(28px)",
+                  background: "radial-gradient(circle at 50% 45%, rgba(78,133,191,0.30), transparent 70%)",
+                  filter: "blur(34px)",
                 }}
               />
               <div className="relative overflow-hidden rounded-[28px] border border-stroke">
                 <img
-                  src="portrait.jpg"
-                  alt={`${profile.name}, electrical engineer, in Hangzhou`}
-                  width={880}
-                  height={1100}
+                  src="engineering.jpg"
+                  alt=""
+                  aria-hidden="true"
+                  width={634}
+                  height={1111}
                   loading="lazy"
-                  className="block w-full"
+                  className="block w-full opacity-90"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent" />
-                <div className="halftone pointer-events-none absolute inset-0 opacity-10 mix-blend-multiply" />
-              </div>
-
-              <div className="absolute -bottom-4 left-4 right-4 flex items-center justify-between rounded-full border border-stroke bg-surface/90 px-5 py-3 backdrop-blur-md">
-                <span className="font-mono text-[11px] text-muted">{profile.city}, China</span>
-                <span className="flex items-center gap-2">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  </span>
-                  <span className="font-mono text-[11px] text-muted">Open to work</span>
-                </span>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-bg/40" />
+                <div className="halftone pointer-events-none absolute inset-0 opacity-15 mix-blend-multiply" />
               </div>
             </div>
           </motion.div>

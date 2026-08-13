@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 import { profile } from "../data/content";
 
 const LINKS = [
@@ -47,8 +48,8 @@ export default function Navbar() {
       >
         <a href="#home" onClick={go("home")} className="group relative mr-1" aria-label="Home">
           <span className="accent-gradient-animated flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110">
-            <span className="flex h-[calc(100%-2px)] w-[calc(100%-2px)] items-center justify-center rounded-full bg-bg font-display text-[13px] italic text-text-primary">
-              {profile.initials}
+            <span className="flex h-[calc(100%-2px)] w-[calc(100%-2px)] items-center justify-center rounded-full bg-bg">
+              <Logo size={19} />
             </span>
           </span>
         </a>
